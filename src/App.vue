@@ -5,8 +5,7 @@
       <div class="tab-bar-item">分类</div>
       <div class="tab-bar-item">购物车</div>
       <div class="tab-bar-item">我的</div> -->
-      <tab-bar-item v-for="tab in tabs" :key="tab.id">
-        {{ tab.name }}
+      <tab-bar-item v-for="tab in tabs" :key="tab.id" :name="tab.name">
       </tab-bar-item>
     </tab-bar>
   </div>

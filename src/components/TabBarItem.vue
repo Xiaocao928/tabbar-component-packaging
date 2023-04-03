@@ -1,12 +1,18 @@
 <template>
   <div class="tab-bar-item">
-    <slot></slot>
+    {{ name }}
   </div>
 </template>
 
 <script>
 export default {
   name: 'TabBarItem',
+  props: {
+    name: {
+      type: String,
+      required: true,
+    },
+  },
 }
 </script>
 
