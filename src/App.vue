@@ -5,9 +5,9 @@
       <div class="tab-bar-item">分类</div>
       <div class="tab-bar-item">购物车</div>
       <div class="tab-bar-item">我的</div> -->
-      <div class="tab-bar-item" v-for="tab in tabs" :key="tab.id">
+      <tab-bar-item v-for="tab in tabs" :key="tab.id">
         {{ tab.name }}
-      </div>
+      </tab-bar-item>
     </tab-bar>
   </div>
 </template>
@@ -15,10 +15,12 @@
 <script>
 //导入
 import TabBar from './components/TabBar.vue'
+import TabBarItem from './components/TabBarItem.vue'
 export default {
   name: 'App',
   components: {
     TabBar,
+    TabBarItem,
   },
   data() {
     return {

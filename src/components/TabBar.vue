@@ -18,10 +18,4 @@ export default {}
   height: 40px;
   background-color: pink;
 }
-.tab-bar-item {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 </style>
