@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-bar-item">
+  <div :class="['tab-bar-item', active ? 'current' : '']">
     <i :class="['iconfont', 'icon-' + icon]"></i>
     <slot></slot>
   </div>
@@ -14,6 +14,11 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      active: true,
+    }
+  },
 }
 </script>
 
@@ -26,9 +31,12 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 12px;
-  color: #fff;
+  color: #666;
 }
 .tab-bar-item i {
   font-size: 18px;
+}
+.tab-bar .current {
+  color: #e93b3b;
 }
 </style>

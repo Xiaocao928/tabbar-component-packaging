@@ -15,7 +15,8 @@ export default {}
   left: 0;
   right: 0;
   bottom: 0;
-  height: 40px;
-  background-color: pink;
+  height: 50px;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px 0 hsl(0deg 6% 58% / 60%);
 }
 </style>
