@@ -5,7 +5,31 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'TabBar',
+  model: {
+    prop: 'value',
+    event: 'change',
+  },
+  props: {
+    value: {
+      type: Number,
+      default: 0,
+    },
+  },
+  watch: {
+    value() {
+      this.$children.forEach((item, index) => {
+        item.active = index == this.value
+      })
+    },
+  },
+  mounted() {
+    console.log(this.$children)
+    // 在这个生命周期函数调用时, 所有的子组件tab-bar-item都已经挂载完成
+    this.$children[this.value].active = true
+  },
+}
 </script>
 
 <style>

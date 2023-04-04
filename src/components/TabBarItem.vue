@@ -1,6 +1,6 @@
 <template>
-  <div :class="['tab-bar-item', active ? 'current' : '']">
-    <i :class="['iconfont', 'icon-' + icon]"></i>
+  <div :class="itemStyle" @click="handleClick">
+    <i :class="iconStyle"></i>
     <slot></slot>
   </div>
 </template>
@@ -16,14 +16,28 @@ export default {
   },
   data() {
     return {
-      active: true,
+      active: false,
     }
+  },
+  computed: {
+    itemStyle() {
+      return ['tab-bar-item', this.active ? 'current' : '']
+    },
+    iconStyle() {
+      return ['iconfont', 'icon-' + this.icon]
+    },
+  },
+  methods: {
+    handleClick() {
+      const index = this.$parent.$children.indexOf(this)
+      this.$parent.$emit('change', index)
+    },
   },
 }
 </script>
 
 <style>
-@import 'http://at.alicdn.com/t/c/font_3660333_clz5n3z0jtw.css';
+@import 'http://at.alicdn.com/t/c/font_3995085_9lst5ml09ag.css';
 .tab-bar-item {
   flex: 1;
   flex-direction: column;
