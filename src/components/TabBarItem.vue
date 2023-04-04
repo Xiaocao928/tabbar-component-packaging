@@ -1,7 +1,7 @@
 <template>
   <div class="tab-bar-item">
-    <i class="iconfont icon-cart"></i>
-    {{ name }}
+    <i :class="['iconfont', 'icon-' + icon]"></i>
+    <slot></slot>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   name: 'TabBarItem',
   props: {
-    name: {
+    icon: {
       type: String,
       required: true,
     },
@@ -21,8 +21,14 @@ export default {
 @import 'http://at.alicdn.com/t/c/font_3660333_clz5n3z0jtw.css';
 .tab-bar-item {
   flex: 1;
+  flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 12px;
+  color: #fff;
+}
+.tab-bar-item i {
+  font-size: 18px;
 }
 </style>
